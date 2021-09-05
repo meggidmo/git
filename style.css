@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+ol {
+  display: flex;
+  list-style: none;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+}
+
+a:hover {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  list-style-position: inside;
+}
+.brandList li {
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.brandList a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.brandList li:hover {
+  background: #d8d8d8;
+  transition: transform 0.3s;
+}
+.brandList li:hover::after {
+  transform: translateX(8px);
+}
+.brandList li::after {
+  display: block;
+  width: 20px;
+  height: 20px;
+  content: "";
+  transition: all 0.3s;
+}
+
+h2 {
+  font-size: 2.441rem;
+  letter-spacing: -0.12rem;
+  line-height: 1.2;
+}
+
+.letterLinks ol {
+  margin-top: 1rem;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 800px) {
+  .brandList ol {
+    column-count: 2;
+  }
+}
+
+/*product*/
+.breadcrumbs {
+  list-style-type: none;
+  display: flex;
+}
+.breadcrumbs li::after {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  content: "";
+  transition: all 0.3s;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 14"><path fill="none" stroke="white" d="M.8 12.87l7.5-6-7.5-6"></path></svg>');
+  background-repeat: no-repeat;
+  /* url('data:image/svg+xml;utf8,<svg class="svg-arrowRight" viewBox="0 0 9 14"><path fill="none" stroke="#979797" d="M.8 12.87l7.5-6-7.5-6"></path></svg>'); */
+}
+.breadcrumbs li:last-child::after {
+  background: none;
+}
+.purchaseBox {
+  background: #b6b3b5;
+  color: var(--background-color);
+  padding: 1rem;
+}
+.info {
+  padding: 1rem;
+}
+.product select {
+  min-width: 100px;
+}
+.product main {
+  display: grid;
+}
+.product main .breadcrumbs,
+.product main img {
+  grid-column: 1/-1;
+}
+.purchaseBox form label {
+  gap: 1rem;
+}
+.purchaseBox button {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+dt {
+  font-weight: 700;
+}
+
+/*product.list*/
+
+/*.productlist main {
+  display: grid;
+  grid-template-columns: repeat(autp-fill, minmax(150px, 300px));
+  gap: 2rem;
+}
+
+.productlist main h2 {
+  grid-column: 1/-1;
+}
+
+.productlist article h3 {
+  font-size: 1rem;
+  flex-grow: 3;
+}
+
+.productlist article > * {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.subtle {
+  color: palevioletred;
+}
+
+.productlist article {
+  display: flex;
+  flex-direction: column;
+}
+
+.productlist article.soldOut img {
+  opacity: 0.5;
+}
+
+.productlist article.soldOut::before {
+  content: "Sold Out";
+  position: absolute;
+  background: var(--color);
+  color: var(--background-color);
+  padding: 1rem;
+}
+
+.productlist article .discounted,
+.productlist article .price span {
+  display: none;
+}
+
+.productlist article.onSale .discounted {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discounted > p {
+  margin-bottom: 0;
+}
+
+.productlist article.onSale .price span {
+  display: initial;
+}
+
+.productlist article button {
+  margin-top: auto;
+}
+
+.productlist article {
+  margin-bottom: 1rem;
+}
+
+.discounted p:last-child {
+  background: var(--off-color);
+  padding: 0.2rem;
+}

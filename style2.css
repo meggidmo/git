@@ -1,0 +1,71 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill minmax(150px, 300px));
+  gap: 2rem;
+  background-color: pink;
+}
+
+main h2 {
+  grid-column: 1/-1;
+}
+.productlist article h3 {
+  font-size: 1rem;
+  flex-grow: 3;
+}
+
+.productlist article > * {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.subtle {
+  color: palevioletred;
+}
+
+.productlist article {
+  display: flex;
+  flex-direction: column;
+}
+
+.productlist article.soldOut img {
+  opacity: 0.5;
+}
+
+.productlist article.soldOut::before {
+  content: "Sold Out";
+  position: absolute;
+  background: var(--color);
+  color: var(--background-color);
+  padding: 1rem;
+}
+
+.productlist article .discounted,
+.productlist article .price span {
+  display: none;
+}
+
+.productlist article.onSale .discounted {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discounted > p {
+  margin-bottom: 0;
+}
+
+.productlist article.onSale .price span {
+  display: initial;
+}
+
+.productlist article button {
+  margin-top: auto;
+}
+
+.productlist article {
+  margin-bottom: 1rem;
+}
+
+.discounted p:last-child {
+  background: var(--off-color);
+  padding: 0.2rem;
+}
